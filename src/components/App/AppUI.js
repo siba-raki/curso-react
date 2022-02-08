@@ -4,8 +4,10 @@ import { TodoContext } from '../TodoContext';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
+import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
+import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils';
 
 function AppUI(){
     const {error, 
@@ -37,7 +39,7 @@ function AppUI(){
         </TodoList>
         {openModal && (
         <Modal>
-          <p>{searchedTodos[0]?.text}</p>
+          <TodoForm />
         </Modal>
       )}
 
