@@ -2,7 +2,6 @@ import React from 'react';
 import './TodoItem.css';
 
 function TodoItem(props) {
-
   return (
     <li className="TodoItem">
       <span
@@ -17,7 +16,6 @@ function TodoItem(props) {
       <span
         className="Icon Icon-delete"
         onClick={props.onDelete}
-        
       >
         X
       </span>
