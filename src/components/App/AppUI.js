@@ -7,7 +7,7 @@ import { TodoItem } from '../TodoItem';
 import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
-import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils';
+import { TodoLoader } from '../TodoLoader';
 
 function AppUI(){
     const {error, 
@@ -23,10 +23,11 @@ function AppUI(){
         <TodoCounter />
         <TodoSearch />
             <TodoList>
+              
             {error && <p>PANICO!!</p>}
-            {loading && <p>Cargando, espere...</p>}
+            { loading && <TodoLoader />}
             {(!loading && !searchedTodos.length) && <p>Crea tu primer todo!</p>}
-    
+
             {searchedTodos.map(todo => (
             <TodoItem
                 key={todo.text}
